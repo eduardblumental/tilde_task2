@@ -1,15 +1,16 @@
 import java.util.Scanner;
 
+// This algorithm is written in Java 11. To run it you need to install and set up the JDK software.
 public class Main {
     public static void main(String[] args) {
 
-        //        Ask user how many points there are in the sequence
+        //        Ask the user how many points there are in the sequence
         int numberOfPoints;
         Scanner scanner = new Scanner(System.in);
         System.out.println("How many points does you sequence have?");
         numberOfPoints = scanner.nextInt();
 
-        //        Read X and Y coordinates of all the points in the sequence from the user input
+        //        Read X and Y coordinates for all the points in the sequence from the user input
         Integer[] sequenceX = new Integer[numberOfPoints];
         Integer[] sequenceY = new Integer[numberOfPoints];
 
@@ -33,8 +34,6 @@ public class Main {
         Integer lackingDeterminant = sequenceX[(numberOfPoints-1)] * sequenceY[0] - sequenceX[0] * sequenceY[(numberOfPoints-1)];
 
         Double signedArea = 0.5*(sumOfDeterminants + lackingDeterminant);
-
-//        System.out.println("Signed area is " + signedArea);
 
         //        If a signed area of a polygon is negative, then it was drawn clockwise
         System.out.println("You have entered the following sequence: ");
